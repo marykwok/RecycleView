@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">RecycleView</string>
+    <string-array name="items">
+        <item>Medium Fries</item>
+        <item>4 piece Nuggets</item>
+        <item>Big Mac</item>
+    </string-array>
+    <string-array name="desc">
+        <item>Medium Fries description</item>
+        <item>4 piece Nuggets description</item>
+        <item>Big Mac description</item>
+    </string-array>
+</resources>

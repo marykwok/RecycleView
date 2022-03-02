@@ -1,0 +1,17 @@
+Recyclerview.height&length= match parent
+Add ID for recyclerview
+    android: id="@+id/recyclerview"
+import images
+Add 2 string arrays
+    @strings.xml
+    initialize items in arary
+    first string is names, second is corresponding description
+
+@MainActivity
+    Initialize 2 string array,
+    Initialize int array for images
+        int images[] = {R.drawable.imgname, ...}
+    @onCreate assign local array with previously created array @string.xml
+        s1 = getResoucres().getStringArray(R.array.saName)
+    RecyclerView obj
+        initialize by recyclerView = findViewById(R.id.recyclerView)
