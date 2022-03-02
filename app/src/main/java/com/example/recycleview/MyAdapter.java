@@ -13,8 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
     Context context;
-    String[] items;
-    String[] desc;
+    String[] items, desc;
     int[] img;
 
     public MyAdapter (Context context, String[] items, String[] desc, int[] img){
@@ -62,7 +61,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
         public MyViewHolder (@NonNull View view){
             super(view);
             items = itemView.findViewById(R.id.items);
-            desc = itemView.findViewById(R.id.itemDesc);
+            desc = itemView.findViewById(R.id.desc);
             img = itemView.findViewById(R.id.img);
             mainLayout = itemView.findViewById(R.id.mainLayout);
         }
