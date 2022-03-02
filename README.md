@@ -1,5 +1,5 @@
 # Recycle Viewer
-Author: Mary Kwok (https://github.com/marykwok)
+Author: Mary Kwok
 Sources: https://www.youtube.com/watch?v=18VcnYN5_LM,https://www.youtube.com/watch?v=xgpLYwEmlO0
 The majority of this project was done exactly according to the tutorials above. The layout was altered minimally to fit with the assignment
          
