@@ -12,20 +12,20 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
-    Context context;
     String[] items, desc;
     int[] img;
+    private ItemClickListener clickListener;
 
-    public MyAdapter (Context context, String[] items, String[] desc, int[] img){
-        this.context = context;
+    public MyAdapter (String[] items, String[] desc, int[] img, ItemClickListener clickListener){
         this.items = items;
         this.desc = desc;
         this.img = img;
+        this.clickListener  = clickListener;
     }
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(context);
+    public MyAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.my_row, parent, false);
         return new MyViewHolder(view);
     }
@@ -33,16 +33,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int pos) {
         int position = pos;
-        holder.items.setText(this.items[position]);
-        holder.img.setImageResource(this.img[position]);
-        holder.mainLayout.setOnClickListener(new View.OnClickListener() {
+        holder.items.setText(items[position]);
+        holder.img.setImageResource(img[position]);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, ItemActivity.class);
-                intent.putExtra("name", items[position]);
-                intent.putExtra("desc", desc[position]);
-                intent.putExtra("img", img[position]);
-                context.startActivity(intent);
+                clickListener.onItemClick(items[position], desc[position], img[position]);
             }
         });
     }
@@ -54,16 +50,19 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
 
 
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
+    class MyViewHolder extends RecyclerView.ViewHolder{
         TextView items, desc;
         ImageView img;
         ConstraintLayout mainLayout;
         public MyViewHolder (@NonNull View view){
             super(view);
-            items = itemView.findViewById(R.id.items);
-            desc = itemView.findViewById(R.id.itemDesc);
-            img = itemView.findViewById(R.id.img);
-            mainLayout = itemView.findViewById(R.id.mainLayout);
+            items = view.findViewById(R.id.items);
+            img = view.findViewById(R.id.img);
+            mainLayout = view.findViewById(R.id.mainLayout);
         }
+    }
+    public interface ItemClickListener {
+
+        public void onItemClick(String name, String desc, int img);
     }
 }

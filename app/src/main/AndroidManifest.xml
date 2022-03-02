@@ -10,12 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RecycleView">
         <activity
-            android:name=".ItemActivity"
-            android:exported="false"
-            android:parentActivityName=".MainActivity"
-            android:label="Item Description"
-            />
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
