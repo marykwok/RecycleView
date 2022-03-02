@@ -1,6 +1,7 @@
 package com.example.recycleview;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
@@ -18,5 +19,7 @@ public class MainActivity extends AppCompatActivity {
         desc = getResources().getStringArray(R.array.desc);
         rcycv = findViewById(rcycv.getId());
         MyAdapter adpt = new MyAdapter(this, items, desc, img);
+        rcycv.setAdapter(adpt);
+        rcycv.setLayoutManager(new LinearLayoutManager(this));
     }
 }
