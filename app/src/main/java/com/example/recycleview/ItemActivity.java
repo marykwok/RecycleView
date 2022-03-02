@@ -9,9 +9,9 @@ import android.widget.Toast;
 
 public class ItemActivity extends AppCompatActivity {
 
-    ImageView img ;
-    TextView desc;
-    String itemDesc;
+    ImageView img;
+    TextView name, desc;
+    String itemName, itemDesc;
     int itemImg;
 
     @Override
@@ -20,14 +20,17 @@ public class ItemActivity extends AppCompatActivity {
         setContentView(R.layout.activity_item);
         img = findViewById(R.id.itemImg);
         desc = findViewById(R.id.itemDesc);
+        name = findViewById(R.id.itemName);
         getData();
         setData();
     }
 
     private void getData(){
         if(getIntent().hasExtra("img") &&
-           getIntent().hasExtra("desc")){
+           getIntent().hasExtra("desc") &&
+           getIntent().hasExtra("name")){
             itemImg = getIntent().getIntExtra("img", 1);
+            itemName = getIntent().getStringExtra("name");
             itemDesc = getIntent().getStringExtra("desc");
 
         }else{
@@ -37,6 +40,7 @@ public class ItemActivity extends AppCompatActivity {
 
     private void setData(){
         desc.setText(itemDesc);
+        name.setText(itemName);
         img.setImageResource(itemImg);
     }
 }
