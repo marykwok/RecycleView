@@ -8,7 +8,7 @@ import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
     String[] items, desc;
-    int[] img = {R.drawable.fries, R.drawable.nugs, R.drawable.bigMac};
+    int[] img = {R.drawable.bigmac_combo,  R.drawable.nuggets_combo, R.drawable.mcmuffine_combo};
     RecyclerView rcycv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         //Initializing RecycleView and relevant variables
         items = getResources().getStringArray(R.array.items);
         desc = getResources().getStringArray(R.array.desc);
-        rcycv = findViewById(rcycv.getId());
+        rcycv = findViewById(R.id.rcycv);
         MyAdapter adpt = new MyAdapter(this, items, desc, img);
         rcycv.setAdapter(adpt);
         rcycv.setLayoutManager(new LinearLayoutManager(this));
