@@ -1,10 +1,10 @@
 # Recycle Viewer
 Author: Mary Kwok
 
-Sources: https://www.youtube.com/watch?v=18VcnYN5_LM, https://www.youtube.com/watch?v=xgpLYwEmlO0
-The majority of this project was done exactly according to the tutorials above. The layout was altered minimally to fit with the assignment
+Sources: https://www.youtube.com/watch?v=18VcnYN5_LM, https://www.youtube.com/watch?v=xgpLYwEmlO0, https://www.youtube.com/watch?v=b_e0Syee38Q&t=628s
+The majority of this project was done according to the tutorials above. The layout was altered minimally to fit with the assignment.
          
-This is a simple app that implement the recycle view function. 
+This is a simple app that implement the recycler view function within fragments. 
 
 ## Major Difficulties encounter
 1. *Building* - There was trouble configuring the Build Tool SDK initially when using IntelliJ. Problem was solved when switched to Android Studio.
