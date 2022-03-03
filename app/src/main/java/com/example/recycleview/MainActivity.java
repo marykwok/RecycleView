@@ -1,5 +1,7 @@
 package com.example.recycleview;
-
+import android.view.MenuItem;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -20,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         transaction.replace(R.id.frame_container, rcycf, "rcyc_fragment");
         transaction.commit();
     }
+
 
 
 }

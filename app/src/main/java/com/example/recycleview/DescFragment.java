@@ -1,15 +1,20 @@
 package com.example.recycleview;
 
+
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -52,6 +57,7 @@ public class DescFragment extends Fragment {
         itemDesc = getArguments().getString(ARG_PARAM2);
         itemImg = getArguments().getInt(String.valueOf(ARG_PARAM3));
 
+
     }
 
 
@@ -63,9 +69,20 @@ public class DescFragment extends Fragment {
         desc = view.findViewById(R.id.itemDesc);
         name = view.findViewById(R.id.itemName);
         img = view.findViewById(R.id.itemImg);
+        FloatingActionButton back = view.findViewById(R.id.floatingActionButton);
         desc.setText(itemDesc);
         name.setText(itemName);
         img.setImageResource(itemImg);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Sourced from: https://stackoverflow.com/questions/14275627/how-to-go-back-to-previous-fragment-on-pressing-manually-back-button-of-individu
+                FragmentManager fm = getActivity().getSupportFragmentManager();
+                fm.popBackStack();
+            }
+        });
         return view;
     }
+
+
 }

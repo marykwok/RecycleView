@@ -11,5 +11,14 @@
         <item>The McDonald\'s 10 piece Chicken McNuggets Combo Meal features 10 tender and delicious Chicken McNuggets made with all white meat chicken\—plus our World Famous Fries and your choice of a Medium McDonald\’s drink\. There are 950 calories in a Chicken McNuggets Combo Meal with medium Fries and a medium Coca\-Cola\.</item>
         <item>Get more for breakfast with the McDonald\’s Egg McMuffin Meal\. This McDonald\’s breakfast meal features an Egg McMuffin\, crispy McDonald\’s hash browns\, and a small McCafe Premium Roast Coffee\– everything you need to start the day off right\! There are 450 calories in an Egg McMuffin Meal at McDonald\'s with a small Coffee and Hash Browns\.</item>
     </string-array>
+    <string name="title_activity_main2">MainActivity2</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
 </resources>
